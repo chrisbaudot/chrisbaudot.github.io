@@ -6,15 +6,14 @@
 //C: add a step value to the range
 //E: will work with negative numbers also, and return an empty array id start and end are equal.
 // we will enter two numbers and a step number.
-//if step is left blank we will us a ternary operator to equal 1 if start is less than end, or -1 if not.
+//if step is left blank we will use a ternary operator to equal 1 if start is less than end, or -1 if not.
 function range(start, end, step = start < end ? 1 : -1) {
   // we wiil make an array to house the range
   let array = [];
-  // if start ans end are equal we will return an empty array
+  // if start and end are equal we will return an empty array
   if (start === end ){
     return array;
   }
-  
   // loop iterates up for positive values if step is positive, down if negative by the step value number.
   //useing the ternary operator to determan if we should count up or down based on the earlier ternary operator for step.
   for (let i = start; step >= 0 ? i <= end : i >= end; i+=step) {
@@ -132,10 +131,16 @@ function prepend(value, list) {
 
 //I: an object and a number
 //O: undefined or element
-//E: we will have to take into acount if there is a list, 
+//E: we will have to take into acount if there is a list,and if the number is zero, for whene we try to referance the index number (num -1)
+//takes a list and a number and returns the element at the given position in the list (with zero referring to the first element) or undefined when there is no such element.
 function nth(list, num) {
-if (num === 0){
+  //check if list exist, if it does not exist return undefined
+  if(list === null) {
+    return undefined;
+  //if num is 0 just return the element in the list.
+  } else if (num === 0){
     return list.value;
+  // normaly return the element, by selecting the num - 1 location.
   } else {
     return nth(list.rest, num -1);
   }
@@ -145,8 +150,31 @@ if (num === 0){
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
-
+//I: two values
+//O: boolean
+// we will make a function that checks if two values are deeply equal:
+function deepEqual(value1, value2) {
+  //first we will check to see if there are equal as they are now.
+  if (value1 === value2){
+    return true;
+  }
+  // we will test the values to see if they are objects.
+  if (value1 == null || value2 == null || typeof value1 != 'object' || typeof value2 != "object"){
+    return false;
+  }
+  //now we will check if the values are the same length.
+  if (Object.keys(value1).length != Object.keys(value2).length){
+    return false;
+  }
+  //now that we know the values are both objects and have not retuned false we can loop through the object to continue checking
+  for (let key of Object.keys(value1)){
+    //if value1 and value2 do not inlclued the same key or the nested values are not deepEqual we return false
+    if (!Object.keys(value2).includes(key) || !deepEqual(value1[key], value2[key])){
+      return false;
+    }
+  }
+  //when all test have been passed we can return true.
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
