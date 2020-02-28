@@ -3,7 +3,7 @@
 'use strict';
 
 var customers = require('./data/customers.json');
-var _ = require(/* Replace this with the name of your lodown! */);
+var _ = require("lodow-chrisbaudot");
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -16,18 +16,42 @@ var _ = require(/* Replace this with the name of your lodown! */);
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./<YOUR_GITHUB_FOLDER/projects/let-s-get-functional
+ *    npm start --prefix ./chrisbaudot.github.io/projects/let-s-get-functional
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
 var maleCount = function(array) {
 
+    //I: array
+    //O: number
+    //C: use filter
+    // get access to each customer obj and filter out the males
+    return _.filter(array, function(customerObj, index, array){
+        //checking to see if my customerObj is a male useing the gender key
+        return customerObj.gender = "male";
+    }).length; //cain on  .length to get number of male customers
 };
 
-var femaleCount;
 
-var oldestCustomer;
+var femaleCount = function(array){
+    //I: array
+    //O: number
+    //C: use reduce
+    // get access to each customer obj and filter out the females
+    // return _.filter(array,array, function(customerObj, index, array){
+    //     //checking to see if my customerObj is a female useing the gender key
+    //     return customerObj.gender = "female";
+    // }).length; //cain on  .length to get number of female customers
+ 
+   return _.reduce(array, function(customerObj, index, array){
+        return customerObj.gender = "female";
+    }, 0).length;
+    
+};
+var oldestCustomer = function(array){
+    
+};
 
 var youngestCustomer;
 
