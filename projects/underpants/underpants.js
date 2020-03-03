@@ -262,6 +262,7 @@ _.each = function (collection, action) {
 
 //I: array
 //O: new array
+//E: only looks at simple datatypes, does not look at referance values.
 //C: we will have to use indexOf
 // we will create an array literal to house our unique values. We will loop thriught
 // we will loop through the array and if the array index is not in the newArray we will 
@@ -585,7 +586,8 @@ _.reduce = function(array, action, seed){
 
 //I: an Object and posibly more than one other object
 //O: object
-//we will use the spread operator to have as many objects arguments as we need.  
+//we will use the spread operator to have the objects copy and update the values 
+//for object1, then object1 is returned.  
 _.extend = function(object1, ...object){
     for (var i = 0; i < object.length; i++){
         Object.assign(object1, object[i]);

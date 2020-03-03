@@ -102,6 +102,7 @@
  * that the code we have does not fail.  It is simple to 
  * add a default parameter, and is easly over writen whne 
  * the user enters the correct number of arguments.
+ * Function do not have to return anything
  */
 
     //this function has two defaults so the user is reminded
@@ -115,6 +116,11 @@
     // the defaul will catch the second empty paramiter
     // and print "Chris Please enter your last name."
     console.log(yourName("Chris"));
+    
+    //Here is a function that does not return anything
+    function gone(){
+    console.log("I will not be returned");
+    }
 
 // 6. Scope //
 
