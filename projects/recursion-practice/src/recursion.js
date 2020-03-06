@@ -22,12 +22,14 @@ var sum = function(array) {
   if (!array.length){
     return 0;
   }
+  //Recursive case - 
   return array[0] + sum(array.slice(1));
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+  
 };
 
 // 4. Check if a number is even.
@@ -62,6 +64,7 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  
 };
 
 // 10. Write a function that determines if a string is a palindrome.
@@ -79,6 +82,13 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 var multiply = function(x, y) {
+  if (x === 0 || y === 0) {
+  return 0;
+ } else if (y < 0) {
+  return -x + multiply(x, y + 1);
+ } else {
+  return x + multiply(x, y - 1);
+ }
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -100,6 +110,7 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  //base case is to return true if we get to zero length 
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -161,6 +172,12 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
+  if(n < 0) {
+    	return null;
+    } else if(n === 1) {
+		return 1;
+	}
+  	return nthFibo(n - 1) + nthFibo(n - 2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.

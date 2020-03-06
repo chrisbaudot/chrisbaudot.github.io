@@ -16,6 +16,7 @@
  * Add and Assignment Operator can also work on strings.
  * 
  *    Operator	                            Example	        Same As
+ *
  *   =  (Assignment Operator)                x = y	        x = y	
  *   += (Add and Assignment Operator)        x += y	        x = x + y
  *   -= (Subtract and Assignment Operator)   x -= y	        x = x - y
@@ -25,6 +26,34 @@
  *   **=(Exponentiation assignment)          x **= y	    x = x ** y
  */
 
+//Assignment Operator
+
+var x = y;
+
+//Add and Assignment Operator
+
+x += y;
+
+//Subtract and Assignment Operator
+
+x -= y
+
+//Multiply and Assignment
+
+x *= y;
+
+//Divide and Assignment
+
+x /= y;
+
+//Modules and Assignment
+
+x %= y;
+
+//Exponentiation assignment
+
+x **= y;
+
 // 2. Arithmetic operators //
 
 /**
@@ -33,9 +62,10 @@
  * Addition also works to concatinate strings.
  * 
  *    Arithmetic Operator	                  Example	       Same As
+ *
  *   +  (Addition: cincatinates two values)  x + y	      2 + 1 // 3
  *   -  (Subtract: reduces from a value)     x - y	      3 - 2 // 1
- *   *  (Multiply: Mutiplication of values)	 x * y	      3 * 2 // 6
+ *   *  (Multiply: Mutiplication of values)  x * y	      3 * 2 // 6
  *   /  (Divide: Division of values)	     x / y	      6 / 3 // 2
  *   %  (Binary Modulus: Finds div remainder)x % y	      6 % 4 // 2 
  *   ** (Exponentiation: value to the power) x ** y	     4 ** 4 // 256
@@ -44,6 +74,51 @@
  *   (-)(Unary negation: makes negative)     -x	   y = 6; y = -x// y = -6
  *   (+)(Unary plus: makes positive)         +x	  y = -9; y = +x// y = 9
  */
+
+//Addition: cincatinates two values
+
+2 + 1; //3
+
+//Subtract: reduces from a value
+
+3 - 2; // 1
+
+//Multiply: Mutiplication of values
+
+3 - 2; // 1
+
+//Divide: Division of values
+
+6 / 3; // 2
+
+//Binary Modulus: Finds div remainder
+
+6 % 4; // 2
+
+//Exponentiation: value to the power
+
+4 ** 4; // 256
+
+//Increment: Unary operator adds 1
+
+x = 4;
+x++; // adds one to x making x 5
+
+//Decrement: Unary operator subs 1 
+
+x = 4;
+x--; // sumtracts one from x making x 3
+
+//Unary negation: makes negative
+
+var y = 6;
+console.log(-y); // will print -6;
+
+//Unary plus: makes positive
+
+y = +true;
+console.log(y); // will print 1;
+
 
 // 3. Comparison operators //
 
@@ -63,7 +138,43 @@
  *   >= (Left is 'Greater than or equal' to right) x >= y        50 >= 50
  *   <= (Left is 'Less than or equal' to right)	   x <= y	     1 <= 6
  */
+ 
+ //Equal: test operands are equal
+ 
+ 2 + 1 == 3; //will return true
+ "3" == 3; //will return true
+ 
+ //Strict equal: test if same type & equal
+ 
+ 3 - 2 === 1; // will return true
+ "1" === 1; // will return false
+ 
+ //Not equal: if operands not equal
+ 
+ 1 != 6; //will return true
+ 6 != 6; //will return false
 
+//Strict not equal: Any type not equal
+
+"Dog" !== {}; //will be true
+
+//Greater than: left greater than right
+
+6 > 4; // will return true
+
+//Less than: left less than right
+
+1 < 3; // will return true
+
+//Left is 'Greater than or equal' to right
+
+50 >= 50; // will return true
+100 >= 50; // will return true
+
+// Left is 'Less than or equal' to right
+
+1 <= 6; // will return true
+ 
 
 // 4. Logical operators //
 
@@ -76,6 +187,22 @@
  *   || (Logical OR: test if one operands true)     x || y       3 - 2 || 50
  *   !  (Logical NOT: makes operands not true)	    x != y	     !1 = 6
  */
+ 
+ //Logical AND: test both operands are true
+ 
+ x = 2;
+ y = 5;
+ 
+ x < 5 && y > 2; //return true
+ 
+ //Logical OR: test if one operands true
+ 
+ x > 5 || y > 2; // returns true
+ 
+ //Logical NOT: makes operands not true
+ 
+x != y; // 2 is not equal to 5, so this will return true;
+
 
 // 5. Unary operators //
 
@@ -93,6 +220,41 @@
  *   ~  (NOT: Inverts the bits of its operand)      ~a = 0	    a = 1
  *   !  (Unary Logical NOT: makes operands not true) x != y	    !1 = 6 // true
  */
+
+// delete (deletes the property of an object)
+const obj = {
+ one: 1,
+ two: 2,
+ three: 3
+};
+
+delete obj.two;
+
+console.log(obj); // will print { one: 1, three: 3 }
+
+//typeof (returnd string of operand's type)
+
+typeof true; // 'boolean'
+
+//void (looks at expression and does not return)
+
+console.log(void obj.three); //will print undefined
+
+//Unary plus: makes positive
+
+console.log(+ true); // 1 
+
+//Unary negation: makes negative
+
+console.log(- true); // -1
+
+//Bitwise NOT: Inverts the bits of its operand
+
+console.log(~1); // will print -2.  1's bits are 00000001, and revesed is 11111110 witch is -2
+
+//Unary Logical NOT: makes operands not true
+
+console.log(! false); // will print true
 
 // 6. Ternary operator (a ? b : c) //
 

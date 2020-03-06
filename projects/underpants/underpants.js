@@ -173,7 +173,7 @@ _.last = function(array, number){
 */
 
 //I: array, and value
-//O: an array or a number
+//O: number
 //E: what if there is more than one value/ what if value is not in array
 //loop over the array testing if the value is equal to the arrays indexed value, if so return the index number of the array.
 //if not found return -1;
